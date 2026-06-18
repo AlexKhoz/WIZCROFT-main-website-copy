@@ -1,0 +1,133 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media points at the EXISTING images folder (do not create a separate library).
+media_folder: "img"
+public_folder: "/img"
+
+locale: "uk"
+
+collections:
+  - name: "home"
+    label: "Головна сторінка"
+    files:
+      - name: "home"
+        label: "Контент головної сторінки"
+        file: "content/home.json"
+        # store as JSON so main.js can fetch & inject it
+        format: "json"
+        fields:
+          # ---------- Header ----------
+          - label: "Шапка (меню)"
+            name: "header"
+            widget: "object"
+            fields:
+              - { label: "Головна", name: "menu_home", widget: "string" }
+              - { label: "Сервіси", name: "menu_services", widget: "string" }
+              - { label: "Команда", name: "menu_team", widget: "string" }
+              - { label: "Контакти", name: "menu_contacts", widget: "string" }
+
+          - label: "Меню сервісів (випадаюче)"
+            name: "services_menu"
+            widget: "list"
+            field: { label: "Пункт", name: "item", widget: "string" }
+
+          # ---------- Hero ----------
+          - label: "Перший екран (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Надзаголовок, рядок 1", name: "eyebrow_line1", widget: "string" }
+              - { label: "Надзаголовок, рядок 2", name: "eyebrow_line2", widget: "string" }
+              - { label: "Заголовок (HTML)", name: "headline_html", widget: "text", hint: "Містить інлайн-теги <span>. Редагуйте обережно." }
+              - { label: "Ім'я засновника", name: "founder_name", widget: "string" }
+              - { label: "Посада засновника", name: "founder_role", widget: "string" }
+              - { label: "Кнопка", name: "cta", widget: "string" }
+
+          # ---------- Block 1 (intro) ----------
+          - label: "Блок «Підхід»"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Абзац 1 (HTML)", name: "para1_html", widget: "text" }
+              - { label: "Абзац 2 (HTML)", name: "para2_html", widget: "text" }
+              - { label: "Великий заголовок (HTML)", name: "headline_html", widget: "text" }
+              - { label: "Кнопка", name: "cta", widget: "string" }
+
+          # ---------- Service cards ----------
+          - label: "Картки послуг"
+            name: "cards"
+            widget: "list"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Пункти списку", name: "items", widget: "list", required: false, field: { label: "Пункт", name: "item", widget: "string" } }
+              - { label: "Текст (замість списку)", name: "text", widget: "text", required: false }
+
+          # ---------- Block 2 (decode) ----------
+          - label: "Блок «Розшифровка коду»"
+            name: "decode"
+            widget: "object"
+            fields:
+              - { label: "Заголовок, рядок 1", name: "title_line1", widget: "string" }
+              - { label: "Заголовок, рядок 2", name: "title_line2", widget: "string" }
+              - { label: "Колонка WISE (HTML)", name: "col_wise_html", widget: "text" }
+              - { label: "Колонка WIZ (HTML)", name: "col_wiz_html", widget: "text" }
+              - { label: "Колонка CROFT (HTML)", name: "col_croft_html", widget: "text" }
+              - { label: "Кнопка", name: "cta", widget: "string" }
+
+          # ---------- Block 3 (freedom) ----------
+          - label: "Блок «Свобода»"
+            name: "freedom"
+            widget: "object"
+            fields:
+              - { label: "Цитата (HTML)", name: "quote_html", widget: "text" }
+
+          # ---------- Team ----------
+          - label: "Команда"
+            name: "team"
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "heading", widget: "string" }
+              - label: "Учасники"
+                name: "members"
+                widget: "list"
+                fields:
+                  - { label: "Ім'я", name: "name", widget: "string" }
+                  - { label: "Посада", name: "role", widget: "string" }
+                  - { label: "Фото", name: "photo", widget: "image" }
+              - { label: "Текст під командою", name: "statement", widget: "text" }
+
+          # ---------- Form ----------
+          - label: "Форма зв'язку"
+            name: "form"
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "heading", widget: "string" }
+              - { label: "Вступний текст", name: "intro", widget: "text" }
+              - { label: "Текст про NDA (HTML)", name: "nda_html", widget: "text" }
+              - { label: "Плейсхолдер «Ім'я»", name: "name_placeholder", widget: "string" }
+              - { label: "Плейсхолдер «Телефон»", name: "phone_placeholder", widget: "string" }
+              - { label: "Кнопка надсилання", name: "submit", widget: "string" }
+
+          # ---------- Partners ----------
+          - label: "Партнери"
+            name: "partners"
+            widget: "object"
+            fields:
+              - { label: "Заголовок, рядок 1", name: "heading_line1", widget: "string" }
+              - { label: "Заголовок, рядок 2", name: "heading_line2", widget: "string" }
+              - { label: "Логотипи", name: "logos", widget: "list", field: { label: "Логотип", name: "logo", widget: "image" } }
+
+          # ---------- Footer ----------
+          - label: "Підвал"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Заголовок колонки «Сервіси»", name: "services_title", widget: "string" }
+              - { label: "Посилання «Сервіси»", name: "services_links", widget: "list", field: { label: "Пункт", name: "item", widget: "string" } }
+              - { label: "Навігація", name: "nav_links", widget: "list", field: { label: "Пункт", name: "item", widget: "string" } }
+              - { label: "«Наверх»", name: "back_to_top", widget: "string" }
+              - { label: "Копірайт", name: "copyright", widget: "string" }
+              - { label: "Політика конфіденційності", name: "privacy", widget: "string" }
+              - { label: "Слоган", name: "tagline", widget: "string" }

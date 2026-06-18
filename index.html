@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WIZCROFT — Фінансово-правовий супровід бізнесу</title>
+  <meta name="description" content="WIZCROFT — інтелектуальний партнер у фінансово-юридичних питаннях: податки, інвестиції, міжнародне структурування та захист бізнесу.">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Shared fixed background: ONE viewport-fixed image behind everything.
+       Only the transparent hero & footer reveal it; all middle sections have
+       opaque backgrounds. Avoids background-attachment:fixed (iOS-safe). -->
+  <div class="fixed-bg" aria-hidden="true"></div>
+
+  <div class="page">
+
+    <!-- ============================ HERO ============================ -->
+    <header class="hero">
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__inner container">
+        <!-- top bar -->
+        <div class="hero__bar">
+          <a href="#" class="hero__logo" aria-label="WIZCROFT — на головну">
+            <img src="img/logo/logo-header.svg" alt="WIZCROFT">
+          </a>
+
+          <button class="nav-toggle" id="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="hero-nav">
+            <span></span><span></span><span></span>
+          </button>
+
+          <nav class="hero__nav" id="hero-nav" aria-label="Головне меню">
+            <a href="#" class="nav__item" data-field="header.menu_home">Головна</a>
+
+            <span class="nav__services">
+              <span class="nav__item nav__item--services" data-field="header.menu_services">Сервіси</span>
+              <span class="hero__chevron" aria-hidden="true">
+                <img src="img/icons/chevron.svg" alt="" width="14" height="7">
+              </span>
+              <!-- Services dropdown (opens on click of "Сервіси") -->
+              <ul class="services-menu" data-field-list="services_menu">
+                <li>Юридична практика</li>
+                <li>Корпоративні фінанси</li>
+                <li>Міжнародне структурування бізнесу</li>
+                <li>Трансфертне ціноутворення та КІК</li>
+                <li>Інвестиційні послуги</li>
+                <li>Податкове консультування</li>
+                <li>Комплексний захист бізнесу у кримінальному провадженні</li>
+              </ul>
+            </span>
+
+            <a href="#team" class="nav__item" data-field="header.menu_team">Команда</a>
+            <a href="#contacts" class="nav__item" data-field="header.menu_contacts">Контакти</a>
+          </nav>
+        </div>
+
+        <!-- hero content -->
+        <div class="hero__content">
+          <div class="hero__main">
+            <div class="hero__eyebrow">
+              <p data-field="hero.eyebrow_line1">WISE → WIZ → CROFT:</p>
+              <p class="hero__eyebrow-2" data-field="hero.eyebrow_line2">розуміти — діяти — захищати результат</p>
+            </div>
+
+            <h1 class="hero__headline" data-field-html="hero.headline_html"><span class="w-ss-semibold">Мудрий радник і стратег.</span><span class="w-ss-light"> Інтелектуальний партнер, що приносить спокій, контроль і перспективу у фінансово-юридичних питаннях. Від податків до інвестицій — забезпечуємо ясність, безпеку та зростання вашого капіталу в Україні й за кордоном.</span></h1>
+
+            <a href="#contacts" class="btn btn--green hero__cta" data-field="hero.cta">Підібрати рішення</a>
+          </div>
+
+          <aside class="founder">
+            <img src="img/team/hero-founder.png" alt="Євген Кондратьєв, Founder & CEO" class="founder__img" width="160" height="160">
+            <p class="founder__name" data-field="hero.founder_name">Євген Кондратьєв</p>
+            <p class="founder__role" data-field="hero.founder_role">Founder &amp; CEO</p>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <main>
+    <!-- ============================ BLOCK 1 — INTRO ============================ -->
+    <section class="intro">
+      <div class="intro__inner container">
+        <div class="intro__top">
+          <div class="intro__img2">
+            <img src="img/bg/Image-2.webp" alt="Команда WIZCROFT за роботою" loading="lazy">
+          </div>
+          <div class="intro__paras">
+            <p class="intro__para" data-field-html="intro.para1_html">Ми застосовуємо <span class="w-ss-bold">«Wise-підхід» </span> у податках, щоб забезпечити передбачуваність, відповідність вимогам і стратегічну безпеку ваших рішень. </p>
+            <p class="intro__para" data-field-html="intro.para2_html">Ми використовуємо <span class="w-ss-bold">«Wiz-методи» </span> у фінансах, щоб знаходити ефективні рішення для інвестування, управління грошовими потоками та зростання капіталу. </p>
+          </div>
+        </div>
+
+        <h2 class="intro__headline" data-field-html="intro.headline_html">Cтворюємо <span class="w-pf-italic">Croft-структуру</span> для вашої компанії, формуючи стійку корпоративну модель для міжнародної діяльності та захисту активів.</h2>
+
+        <!-- Service cards -->
+        <div class="cards-grid">
+          <article class="card card--p1">
+            <h3 class="card__title">Юридична практика</h3>
+            <ul class="card__list">
+              <li>Податковий захист: перевірки та стратегія реагування </li>
+              <li>Господарське і корпоративне право</li>
+              <li>Супровід офіційних запитів і вимог</li>
+              <li>Правова модель IT-бізнесу</li>
+            </ul>
+          </article>
+
+          <article class="card card--p2">
+            <h3 class="card__title">Корпоративні фінанси</h3>
+            <ul class="card__list">
+              <li>Діагностика фінансового здоров’я (Фінансовий чек-ап бізнесу)</li>
+              <li>Фінансова модель для масштабування / інвестора. Розрахунок ключових метрик EBITDA, ROI</li>
+              <li>Операційна підтримка фінансових процесів компанії   </li>
+            </ul>
+          </article>
+
+          <article class="card card--p3">
+            <h3 class="card__title">Міжнародне структурування бізнесу</h3>
+            <ul class="card__list">
+              <li>Реєстрація та ліквідація іноземних компаній</li>
+              <li>Відкриття рахунків в іноземних банках і платіжних системах</li>
+              <li>Створення трастових і холдингових структур</li>
+              <li>Структурування володіння іноземними активами</li>
+            </ul>
+          </article>
+
+          <article class="card card--p4">
+            <h3 class="card__title">Трансфертне ціноутворення та КІК</h3>
+            <p class="card__text">Міжнародний бізнес потребує  належного документального  підтвердження: обґрунтування  відповідності цін принципу «витягнутої  руки», визначення наявності контролю  над іноземними компаніями та  своєчасного виконання звітних  обов’язків перед ДПС.</p>
+          </article>
+
+          <article class="card card--p5">
+            <h3 class="card__title">Інвестиційні послуги</h3>
+            <ul class="card__list">
+              <li>Оцінка інвестиційних можливостей і  профілю інвестора</li>
+              <li>Формування індивідуальної  інвестиційної стратегії</li>
+              <li>Консультаційний супровід інвестора</li>
+              <li>Інвестиційна структура власності</li>
+              <li>Підготовка до фінансового онбордингу</li>
+            </ul>
+          </article>
+
+          <article class="card card--p6 card--tall">
+            <h3 class="card__title">Податкове консультування</h3>
+            <ul class="card__list">
+              <li>Міжнародне податкове планування  та вибір резидентства</li>
+              <li>Податкова звітність і супровід ЗЕД- операцій</li>
+              <li>Юридичний супровід бізнесу за  кордоном</li>
+              <li>Аналіз і зниження юридичних та  податкових ризиків</li>
+              <li>Супровід міжнародної зайнятості та  мобільності команди. Послуга  охоплює правові та податкові  аспекти взаємодії з працівниками й  підрядниками, зокрема в умовах  міжнародної діяльності,  дистанційної роботи або релокації  команди.</li>
+            </ul>
+          </article>
+
+          <article class="card card--p7 card--wide">
+            <h3 class="card__title">Комплексний захист бізнесу у кримінальному провадженні</h3>
+            <p class="card__text">Кримінальне провадження щодо посадових осіб  або самої компанії створює ризики для діяльності  бізнесу, його репутації та активів. Ми забезпечуємо  комплексний правовий захист компанії та її  керівництва (!) на всіх стадіях кримінального  процесу.</p>
+          </article>
+        </div>
+
+        <a href="#contacts" class="btn btn--blue intro__cta" data-field="intro.cta">Замовити консультацію</a>
+      </div>
+    </section>
+
+    <!-- ============================ BLOCK 2 — DECODE ============================ -->
+    <section class="decode">
+      <img src="img/bg/Image-code.webp" alt="" class="decode__bg" loading="lazy" aria-hidden="true">
+      <div class="decode__inner container">
+        <h2 class="decode__title">
+          <span class="decode__title-1" data-field="decode.title_line1">Розшифровка коду</span>
+          <span class="decode__title-2" data-field="decode.title_line2">Wizcroft</span>
+        </h2>
+
+        <div class="decode__cols">
+          <div class="decode__col" data-field-html="decode.col_wise_html">Усе починається з ідейної бази: WIZCROFT виростає<br>з <span class="w-ss-bold">концепції WISE — стратегічної мудрості</span> , що<br>формує фундамент компанії. Це глибинне<br>розуміння законів, податкових кодів і правил гри.<br>Бути Wise означає діяти на випередження та<br>передбачати ризики ще до їх появи.</div>
+
+          <div class="decode__col" data-field-html="decode.col_wiz_html"><span class="w-ss-bold">WIZ (Майстерність та Винахідливість).</span><br>Наша енергія руху вперед. Те, як ми діємо. Корінь від<br>«Wizardry» (майстерність високого ґатунку). Це<br>здатність знаходити елегантні рішення для складних<br>задач, де стандартні методи не працюють. Це<br>фінансова алхімія, що перетворює хаос цифр на<br>прибуток.</div>
+
+          <div class="decode__col" data-field-html="decode.col_croft_html"><span class="w-ss-semibold">CROFT (Приватна Територія / Фортеця).</span><br>Це результат нашої роботи. «Croft» —<br>обгороджена, захищена ділянка, особистий<br>простір безпеки. У глобальному світі ваш<br>бізнес потребує «дому», який непідвладний<br>зовнішнім штормам.</div>
+        </div>
+
+        <a href="#contacts" class="btn btn--outline decode__cta" data-field="decode.cta">Контакти</a>
+      </div>
+    </section>
+
+    <!-- ============================ BLOCK 3 — FREEDOM ============================ -->
+    <section class="freedom">
+      <div class="freedom__inner container">
+        <p class="freedom__quote" data-field-html="freedom.quote_html">Нашим клієнтам потрібна <span class="w-pf-italic">виважена стратегія та захищений простір</span> для зростання. Якраз на базі цього розпочинається свобода. </p>
+        <img src="img/icons/freedom-line.svg" alt="" class="freedom__line" loading="lazy" aria-hidden="true" width="186" height="20">
+      </div>
+    </section>
+
+    <!-- ============================ BLOCK 4 — TEAM + FORM ============================ -->
+    <section class="block4" id="team">
+      <div class="block4__inner container">
+        <h2 class="team__heading" data-field="team.heading">Команда</h2>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-card__label">
+              <p class="team-card__name">Євген Кондратьєв</p>
+              <p class="team-card__role">Founder &amp; CEO</p>
+            </div>
+            <div class="team-card__photo">
+              <img src="img/team/Євген Кондратьєв.webp" alt="Євген Кондратьєв — Founder & CEO" loading="lazy">
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__label">
+              <p class="team-card__name">Олександра Кузьміна</p>
+              <p class="team-card__role">Старший аналітик</p>
+            </div>
+            <div class="team-card__photo">
+              <img src="img/team/Олександра Кузьміна.webp" alt="Олександра Кузьміна — Старший аналітик" loading="lazy">
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__label">
+              <p class="team-card__name">Анна Калугіна</p>
+              <p class="team-card__role">Провідний юрисконсульт</p>
+            </div>
+            <div class="team-card__photo">
+              <img src="img/team/Анна Калугіна.webp" alt="Анна Калугіна — Провідний юрисконсульт" loading="lazy">
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__label">
+              <p class="team-card__name">Юлія Арнаутова</p>
+              <p class="team-card__role">Партнер, Керівник фінансової практики</p>
+            </div>
+            <div class="team-card__photo">
+              <img src="img/team/Юлія Арнаутова.webp" alt="Юлія Арнаутова — Партнер, Керівник фінансової практики" loading="lazy">
+            </div>
+          </article>
+        </div>
+
+        <p class="team__statement" data-field="team.statement">Підприємці створюють і розвивають бізнес. Ми будуємо юридичну та фінансову основу, яка  дозволяє цим рішенням працювати стабільно і  довго.</p>
+
+        <!-- Contact form -->
+        <div class="contact" id="contacts">
+          <div class="contact__media">
+            <img src="img/bg/Image-form.webp" alt="Зустріч-знайомство з командою WIZCROFT" loading="lazy">
+          </div>
+
+          <div class="contact__body">
+            <h2 class="contact__heading" data-field="form.heading">Запрошуємо на зустріч-знайомство</h2>
+
+            <p class="contact__intro" data-field="form.intro">Офлайн-зустріч, Zoom або дзвінок — це простір, де ми спершу розуміємо вашу ситуацію, далі окреслюємо можливі дії і допомагаємо вибудувати рішення, що захищає результат.</p>
+
+            <p class="contact__nda" data-field-html="form.nda_html">Усе, що обговорюється під час зустрічі-знайомства, залишається конфіденційним. За потреби ми <span class="w-ss-semibold">підписуємо NDA, </span> щоб гарантувати повну приватність і захист вашої інформації.</p>
+
+            <!-- Web3Forms contact form -->
+            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <!-- TODO: replace YOUR_ACCESS_KEY_HERE with the client's real Web3Forms access key -->
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+              <input type="hidden" name="subject" value="Нова заявка з сайту WIZCROFT">
+              <!-- honeypot anti-spam field -->
+              <input type="checkbox" name="botcheck" class="visually-hidden" style="display:none" tabindex="-1" autocomplete="off">
+
+              <div class="field">
+                <input type="text" name="name" class="field__input" placeholder="Ім'я" required autocomplete="name" data-field-placeholder="form.name_placeholder">
+              </div>
+              <div class="field">
+                <input type="tel" name="phone" class="field__input" placeholder="Телефон" required autocomplete="tel" inputmode="tel" data-field-placeholder="form.phone_placeholder">
+              </div>
+              <button type="submit" class="form__submit" data-field="form.submit">Зв’язатись з нами </button>
+
+              <p class="form__result" id="form-result" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <!-- ============================ PARTNERS ============================ -->
+    <section class="partners" aria-label="Офіційні партнери">
+      <div class="partners__inner container">
+        <!-- NOTE: "пратнери" is verbatim from the design (typo kept intentionally). -->
+        <h2 class="partners__heading"><span data-field="partners.heading_line1">Офіційні </span><br><span data-field="partners.heading_line2">пратнери:</span></h2>
+        <div class="partners__logos">
+          <div class="partner"><img src="img/Partners/Logo-partner-01.webp" alt="Логотип партнера 1" loading="lazy"></div>
+          <div class="partner"><img src="img/Partners/Logo-partner-02.webp" alt="Логотип партнера 2" loading="lazy"></div>
+          <div class="partner"><img src="img/Partners/Logo-partner-03.webp" alt="Логотип партнера 3" loading="lazy"></div>
+          <div class="partner"><img src="img/Partners/Logo-partner-04.webp" alt="Логотип партнера 4" loading="lazy"></div>
+          <div class="partner"><img src="img/Partners/Logo-partner-05.webp" alt="Логотип партнера 5" loading="lazy"></div>
+          <div class="partner"><img src="img/Partners/Logo-partner-06.webp" alt="Логотип партнера 6" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FOOTER ============================ -->
+    <footer class="footer">
+      <div class="footer__overlay" aria-hidden="true"></div>
+
+      <div class="footer__inner container">
+        <div class="footer__cols">
+          <nav class="footer__services" aria-label="Сервіси">
+            <h3 class="footer__col-title" data-field="footer.services_title">Сервіси</h3>
+            <a href="#">Юридична практика</a>
+            <a href="#">Корпоративні фінанси</a>
+            <a href="#">Міжнародне структурування бізнесу</a>
+            <a href="#">Трансфертне ціноутворення та КІК</a>
+            <a href="#">Інвестиційні послуги</a>
+            <a href="#">Податкове консультування</a>
+            <a href="#" class="footer__services-multiline">Комплексний захист бізнесу у<br>кримінальному провадженні</a>
+          </nav>
+
+          <nav class="footer__nav" aria-label="Навігація">
+            <a href="#">Головна</a>
+            <a href="#team">Команда</a>
+          </nav>
+
+          <a href="#" class="footer__top" id="back-to-top">
+            <span class="footer__top-label" data-field="footer.back_to_top">Наверх</span>
+            <span class="footer__top-icon">
+              <img src="img/icons/scrolltop-group.svg" alt="" width="55" height="55">
+              <img src="img/icons/scrolltop-vector.svg" alt="" class="footer__top-arrow" width="10" height="23">
+            </span>
+          </a>
+        </div>
+
+        <div class="footer__meta">
+          <div class="footer__social">
+            <a href="#" aria-label="Соцмережа 1"><img src="img/icons/social-01.svg" alt="" width="55" height="55"></a>
+            <a href="#" aria-label="Соцмережа 2"><img src="img/icons/social-02.svg" alt="" width="55" height="55"></a>
+          </div>
+          <div class="footer__logo">
+            <img src="img/logo/logo-footer.svg" alt="WIZCROFT" width="349" height="37" loading="lazy">
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <span data-field="footer.copyright">© WIZCROFT. 2026</span>
+          <span data-field="footer.privacy">Політика конфіденційності.</span>
+          <span data-field="footer.tagline">Фінансово-правовий супровід бізнесу</span>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /.page -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
