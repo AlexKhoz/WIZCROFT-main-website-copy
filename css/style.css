@@ -103,6 +103,8 @@ ul { list-style: none; }
 /* hover states (also applied on keyboard focus) */
 .hero__cta:hover,  .hero__cta:focus-visible  { background: #7C9CB6; color: var(--c-white); }
 .intro__cta:hover, .intro__cta:focus-visible { background: #809B83; color: var(--c-white); }
+/* outline "Контакти": fill with the accent (border) colour on hover */
+.decode__cta:hover, .decode__cta:focus-visible { background: var(--c-accent-blue); color: var(--c-white); }
 
 /* =========================================================
    HERO
@@ -314,9 +316,11 @@ ul { list-style: none; }
 }
 
 /* contact form */
-.contact { margin-top: 80px; display: flex; align-items: flex-start; gap: 105px; }
-.contact__media { flex: 0 0 806px; max-width: 806px; }
-.contact__media img { width: 100%; height: 651px; object-fit: cover; border-radius: 50px; }
+/* align-items:stretch + absolutely-filled image → the photo matches the
+   height of .contact__body (the taller column) on desktop. */
+.contact { margin-top: 80px; display: flex; align-items: stretch; gap: 105px; }
+.contact__media { flex: 0 0 806px; max-width: 806px; position: relative; }
+.contact__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50px; }
 .contact__body { flex: 1; min-width: 0; }
 .contact__heading { font-family: var(--font-serif); font-weight: 400; font-size: 39.2px; line-height: 39.222px; color: var(--c-text); }
 .contact__intro { margin-top: 26px; font-weight: 300; font-size: 22.4px; line-height: 29.883px; color: var(--c-text); }
@@ -336,7 +340,9 @@ ul { list-style: none; }
   width: 100%; height: 92px; background: var(--c-green); border: none; border-radius: 60px;
   font-family: var(--font-sans); font-weight: 400; font-size: 16px; line-height: 29.883px;
   color: var(--c-white); cursor: pointer;
+  transition: background-color .2s ease;
 }
+.form__submit:hover, .form__submit:focus-visible { background: #A1C2DC; } /* text stays white */
 .form__submit:disabled { opacity: .6; cursor: default; }
 .form__result { font-family: var(--font-sans); font-size: 18px; min-height: 1em; }
 .form__result.is-ok    { color: var(--c-green); }
@@ -443,8 +449,8 @@ ul { list-style: none; }
   .freedom__inner { flex-direction: column; align-items: flex-start; gap: 24px; padding-block: 50px; }
 
   .contact { flex-direction: column; gap: 40px; }
-  .contact__media { flex-basis: auto; max-width: 100%; width: 100%; }
-  .contact__media img { height: auto; aspect-ratio: 806 / 651; }
+  .contact__media { position: static; flex-basis: auto; max-width: 100%; width: 100%; }
+  .contact__media img { position: static; width: 100%; height: auto; aspect-ratio: 806 / 651; }
   .contact-form { max-width: none; }
 
   .partners__inner { flex-direction: column; align-items: flex-start; gap: 30px; }
