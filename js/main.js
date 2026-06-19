@@ -70,10 +70,7 @@
       console.warn("home.json not loaded; using static content.", err);
     });
 
-  /* ---------- 2) contact form (Web3Forms) ---------- */
-  var form = document.getElementById("contact-form");
-  var result = document.getElementById("form-result");
-
+  /* ---------- 2) contact forms (Web3Forms) — supports multiple per page ---------- */
   // Accepts UA numbers like +380XXXXXXXXX, 380XXXXXXXXX, 0XXXXXXXXX
   // (spaces, dashes, parentheses are ignored).
   function isValidUaPhone(raw) {
@@ -81,14 +78,16 @@
     return /^(?:\+?380\d{9}|0\d{9})$/.test(digits);
   }
 
-  function setResult(message, ok) {
-    if (!result) return;
-    result.textContent = message;
-    result.classList.remove("is-ok", "is-error");
-    result.classList.add(ok ? "is-ok" : "is-error");
-  }
+  document.querySelectorAll("form.js-w3form").forEach(function (form) {
+    var result = form.querySelector(".form__result");
 
-  if (form) {
+    function setResult(message, ok) {
+      if (!result) return;
+      result.textContent = message;
+      result.classList.remove("is-ok", "is-error");
+      if (message) result.classList.add(ok ? "is-ok" : "is-error");
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -96,17 +95,17 @@
       var phoneEl = form.elements["phone"];
       var valid = true;
 
-      [nameEl, phoneEl].forEach(function (el) { el.classList.remove("is-invalid"); });
+      [nameEl, phoneEl].forEach(function (el) { if (el) el.classList.remove("is-invalid"); });
 
-      if (!nameEl.value.trim()) { nameEl.classList.add("is-invalid"); valid = false; }
-      if (!isValidUaPhone(phoneEl.value)) { phoneEl.classList.add("is-invalid"); valid = false; }
+      if (!nameEl || !nameEl.value.trim()) { if (nameEl) nameEl.classList.add("is-invalid"); valid = false; }
+      if (!phoneEl || !isValidUaPhone(phoneEl.value)) { if (phoneEl) phoneEl.classList.add("is-invalid"); valid = false; }
 
       if (!valid) {
         setResult("Будь ласка, вкажіть ім'я та коректний номер телефону.", false);
         return;
       }
 
-      var btn = form.querySelector(".form__submit");
+      var btn = form.querySelector("button[type=submit]");
       var btnText = btn ? btn.textContent : "";
       if (btn) { btn.disabled = true; btn.textContent = "Надсилаємо…"; }
       setResult("", true);
@@ -134,7 +133,7 @@
           if (btn) { btn.disabled = false; btn.textContent = btnText; }
         });
     });
-  }
+  });
 
   /* ---------- 3) scroll to top ---------- */
   var toTop = document.getElementById("back-to-top");

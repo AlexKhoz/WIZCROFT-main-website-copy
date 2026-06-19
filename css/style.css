@@ -515,3 +515,268 @@ ul { list-style: none; }
   .footer__bottom { flex-direction: column; gap: 12px; margin-top: 48px; }
   .footer__logo img { width: 240px; }
 }
+
+/* =========================================================
+   ===============  LEGAL PRACTICE PAGE  ===================
+   Reuses .hero / .freedom / .block4 / .contact / .partners /
+   .footer. New components below; legal-only overrides scoped
+   under .page-legal.
+   ========================================================= */
+
+/* shared fixed background → legal (mountain) image, darker overlay */
+.page-legal .fixed-bg { background-image: url("../img/bg/Image-hero-legal.jpg"); }
+.page-legal .hero__overlay,
+.page-legal .footer__overlay { background: rgba(21, 24, 28, 0.55); }
+.page-legal .founder__name,
+.page-legal .founder__role { color: var(--c-accent-blue); }
+
+/* --- legal hero copy --- */
+.hero__content--legal .hero__main { margin-top: 210px; max-width: none; } /* full width so the centred CTA centres to the page */
+.lhero__title { font-family: var(--font-serif); font-weight: 400; font-size: 44.8px; line-height: 63.502px; color: var(--c-white); }
+.lhero__sub   { margin-top: 16px; max-width: 883px; font-family: var(--font-serif); font-weight: 400; font-size: 33.6px; line-height: 44.825px; color: var(--c-white); }
+.lhero__lead  { margin-top: 78px; max-width: 1283px; font-weight: 300; font-size: 56px; line-height: 63.502px; letter-spacing: -1.6809px; color: var(--c-light); }
+.hero__content--legal .hero__cta { margin-inline: auto; } /* always centered */
+
+/* --- block 2: approach points --- */
+.intro__img2--legal img { height: 599px; }
+.lpoints { gap: 46px; }
+.lpoint { font-weight: 600; font-size: 33.6px; line-height: 44.825px; letter-spacing: -1.6809px; color: var(--c-text); }
+.lpoint .w-ss-light { font-weight: 300; }
+.lquote { color: var(--c-green); }
+.lquote .w-pf-italic { font-style: italic; }
+.lresult-title { color: var(--c-text); }
+
+/* --- cowork CTA card (e4ebee) --- */
+.cowork {
+  margin-top: 130px;
+  display: flex; gap: 120px;
+  background: #e4ebee; border-radius: 30px;
+  padding: 56px 68px 58px 60px;
+}
+.cowork__text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
+.cowork__title { font-weight: 600; font-size: 43px; line-height: 41.089px; letter-spacing: -1.8677px; text-transform: uppercase; color: rgba(44, 46, 51, 0.4); }
+.cowork__lead  { font-weight: 300; font-size: 22.4px; line-height: 29.883px; letter-spacing: -0.9338px; color: var(--c-text); }
+.cowork__form  { flex: 1 1 0; min-width: 0; max-width: none; margin-top: 0; gap: 40px; justify-content: space-between; position: relative; }
+/* keep the (initially empty) status message out of the vertical distribution */
+.cowork__form .form__result { position: absolute; left: 30px; top: calc(100% + 8px); }
+.field__input--light { background: var(--c-light); }
+
+/* --- benefits grid (8 green cards) --- */
+.benefit-grid { margin-top: 70px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 10px; }
+.benefit-card { background: var(--c-green); border-radius: 16px; padding: 30px 20px 30px 30px; color: var(--c-white); display: flex; flex-direction: column; gap: 26px; }
+.benefit-card__title { font-weight: 600; font-size: 26.1px; line-height: 29.883px; letter-spacing: -0.9338px; }
+.benefit-card__arrow { display: block; }
+.benefit-card__text  { font-weight: 300; font-size: 26.1px; line-height: 29.883px; letter-spacing: -0.9338px; }
+
+/* --- parallax gap (transparent → reveals the shared fixed image) --- */
+.parallax-gap { position: relative; }
+.parallax-gap::before { content: ""; position: absolute; inset: 0; background: rgba(21, 24, 28, 0.4); z-index: 0; pointer-events: none; }
+.parallax-gap__inner { position: relative; z-index: 1; display: flex; gap: 150px; align-items: flex-start; padding-block: 117px; }
+.industries { flex: 0 0 603px; max-width: 603px; background: rgba(39, 75, 91, 0.8); padding: 60px 50px; display: flex; flex-direction: column; gap: 70px; align-items: center; }
+.industries__title { font-weight: 600; font-size: 41.1px; line-height: 44.825px; letter-spacing: -1.8677px; text-transform: uppercase; color: var(--c-accent-blue); text-align: center; }
+.industries__list { width: 100%; color: var(--c-light); font-weight: 300; font-size: 33.6px; line-height: 41.089px; letter-spacing: -0.9338px; }
+.industries__list li { position: relative; padding-left: 26px; }
+.industries__list li::before { content: "•"; position: absolute; left: 0; }
+.meeting { flex: 1; min-width: 0; color: var(--c-white); }
+.meeting__title { font-family: var(--font-serif); font-weight: 400; font-size: 39.2px; line-height: 39.222px; color: var(--c-white); }
+.meeting__text  { margin-top: 26px; max-width: 681px; font-weight: 300; font-size: 22.4px; line-height: 29.883px; color: var(--c-white); }
+.meeting .contact-form { margin-top: 35px; max-width: 680px; }
+
+/* --- dark stacked service panels --- */
+/* pull the stack up so the first rounded panel overlays the section above
+   (otherwise its rounded top corners reveal a gap) */
+.svc-stack { position: relative; z-index: 1; margin-top: -90px; }
+.svc-block { position: relative; background: var(--c-text); border-radius: 90px 90px 0 0; color: var(--c-white); filter: drop-shadow(0 -4px 19.8px rgba(0, 0, 0, 0.25)); }
+.svc-block + .svc-block { margin-top: -80px; } /* overlap so the rounded tops stack */
+.svc-block__inner { padding-block: 84px 140px; }
+.svc-block__cols { display: flex; justify-content: space-between; gap: 60px; }
+.svc-block__title { flex: 0 0 549px; max-width: 549px; font-weight: 600; font-size: 52.3px; line-height: 59.766px; letter-spacing: -1.8677px; text-transform: uppercase; }
+.svc-block__body { flex: 1; max-width: 945px; }
+.svc-block__desc { font-family: var(--font-serif); font-weight: 400; font-size: 33.6px; line-height: 41.089px; color: var(--c-light); }
+.svc-block__note { margin-top: 62px; font-weight: 300; font-size: 33.6px; line-height: 41.089px; letter-spacing: -0.9338px; color: var(--c-light); }
+.svc-block__list { flex: 1; max-width: 945px; color: var(--c-light); font-family: var(--font-serif); font-size: 33.6px; line-height: 41.089px; }
+.svc-block__list li { list-style: disc; margin-left: 50px; }
+.svc-form { margin: 120px auto 0; max-width: 1190px; display: flex; flex-wrap: wrap; gap: 20px; }
+.svc-form__input { flex: 1 1 0; min-width: 0; height: 46px; padding: 10px 30px; background: var(--c-input); border: none; border-radius: 60px; font-family: var(--font-sans); font-size: 16px; color: var(--c-placeholder); }
+.svc-form__input::placeholder { color: var(--c-placeholder); }
+.svc-form__input:focus { outline: 2px solid var(--c-accent-blue); }
+.svc-form__input.is-invalid { outline: 2px solid #c0392b; }
+.svc-form__submit { flex: 1 1 0; min-width: 0; height: 46px; background: var(--c-green); border: none; border-radius: 60px; color: var(--c-white); font-family: var(--font-sans); font-size: 16px; cursor: pointer; transition: background-color .2s ease; }
+.svc-form__submit:hover, .svc-form__submit:focus-visible { background: #A1C2DC; }
+.svc-form .form__result { flex-basis: 100%; }
+
+/* ---------- legal responsive ---------- */
+@media (max-width: 1280px) {
+  .hero--legal .hero__inner { min-height: auto; }
+  .hero__content--legal .hero__main { margin-top: 60px; }
+  .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+  .cowork { gap: 60px; }
+}
+@media (max-width: 900px) {
+  .intro__img2--legal img { height: auto; aspect-ratio: 1109 / 1190; }
+  .lpoint { font-size: 26px; line-height: 1.3; }
+  .lquote { font-size: 48px; line-height: 1.15; }
+
+  .cowork { flex-direction: column; gap: 40px; padding: 40px; }
+  .cowork__text { flex-basis: auto; max-width: none; }
+  .cowork__form { max-width: none; }
+
+  .benefit-grid { grid-template-columns: 1fr; } /* tablet → single column */
+
+  .parallax-gap__inner { flex-direction: column; gap: 40px; padding-block: 70px; }
+  .industries { flex-basis: auto; max-width: 100%; width: 100%; }
+
+  .svc-block__cols { flex-direction: column; gap: 24px; }
+  .svc-block__title { flex-basis: auto; max-width: none; font-size: 40px; line-height: 1.1; }
+  .svc-block__note { margin-top: 32px; }
+  .svc-block__desc, .svc-block__note, .svc-block__list { font-size: 26px; line-height: 1.3; }
+  .svc-form { margin-top: 48px; flex-direction: column; }
+  .svc-form__input, .svc-form__submit { flex: none; width: 100%; height: 56px; }
+}
+@media (max-width: 600px) {
+  .lhero__title { font-size: 34px; line-height: 1.2; }
+  .lhero__sub   { font-size: 22px; line-height: 1.3; margin-top: 12px; }
+  .lhero__lead  { font-size: 28px; line-height: 1.25; margin-top: 40px; }
+
+  .lpoint { font-size: 22px; }
+  .lquote { font-size: 32px; }
+  .lresult-title { font-size: 32px; line-height: 1.2; }
+
+  .cowork__title { font-size: 32px; line-height: 1.1; }
+  .benefit-card__title, .benefit-card__text { font-size: 20px; }
+
+  .industries__title { font-size: 30px; line-height: 1.15; }
+  .industries__list { font-size: 22px; line-height: 1.4; }
+  .meeting__title { font-size: 28px; }
+
+  .svc-block { border-radius: 48px 48px 0 0; }
+  .svc-block__title { font-size: 30px; }
+  .svc-block__desc, .svc-block__note, .svc-block__list { font-size: 20px; }
+  .svc-block__list li { margin-left: 24px; }
+}
+
+/* =========================================================
+   ============  CORPORATE FINANCE PAGE  ===================
+   Reuses the legal-page components; new pieces below.
+   ========================================================= */
+.page-corp .fixed-bg { background-image: url("../img/bg/Image-hero-corp.jpg"); }
+.founder--circle .founder__img { border-radius: 50%; }
+.intro--corp { border-radius: 55px 55px 0 0; } /* rounded top only */
+
+/* second service-panel title has a lighter sub-line */
+.svc-block__title-sub { display: block; font-weight: 300; }
+
+/* --- "when the business needs corporate finance" --- */
+.when { margin-top: 130px; }
+.when__title { font-weight: 600; font-size: 43px; line-height: 41.089px; letter-spacing: -1.8677px; text-transform: uppercase; color: var(--c-accent-blue); text-align: center; }
+.when__intro { margin-top: 64px; max-width: 932px; font-weight: 300; font-size: 33.6px; line-height: 41.089px; letter-spacing: -0.9338px; color: var(--c-text); }
+.when__cols { margin-top: 48px; display: flex; align-items: flex-start; gap: 60px; }
+.when__cases { flex: 1; min-width: 0; }
+.when__label { font-family: var(--font-serif); font-weight: 400; font-size: 33.6px; color: var(--c-text-dark); }
+.when__list { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; font-weight: 300; font-size: 29.9px; line-height: 37.354px; letter-spacing: -0.9338px; color: var(--c-text); }
+.when__list li { list-style: disc; margin-left: 45px; }
+.when__illus { flex: 0 0 560px; max-width: 560px; position: relative; align-self: flex-start; }
+.when__illus-base { width: 100%; height: auto; }
+.when__illus-card { position: absolute; left: -3%; top: -5%; width: 78%; height: auto; z-index: 2; }
+.when__divider { margin-top: 0; border: 0; border-top: 1px solid rgba(44, 46, 51, 0.3); }
+
+/* --- audience band (over its own image) --- */
+.audience-band { background: #2c2e33 url("../img/bg/Image-corp-band.jpg") center / cover no-repeat; }
+.audience-band__inner { display: flex; align-items: center; gap: 60px; padding-block: 180px; }
+.audience-band__title { flex: 0 0 758px; max-width: 758px; font-weight: 300; font-size: 89.6px; line-height: 93.385px; text-transform: uppercase; color: var(--c-text); }
+.audience-band__text { flex: 1; min-width: 0; max-width: 606px; font-weight: 300; font-size: 29.9px; line-height: 33.619px; color: var(--c-white); }
+.audience-band__text .w-ss-semibold { font-weight: 600; }
+
+/* --- audience bars (full-width #97bbd8) --- */
+/* isolate the bars' stacking so earlier bars paint ABOVE later ones — otherwise
+   each bar's downward shadow is hidden under the (flush) next bar */
+.aud-list { position: relative; isolation: isolate; }
+.aud-bar { position: relative; background: var(--c-accent-blue); box-shadow: 0 9px 15px 0 rgba(0, 23, 42, 0.15); }
+.aud-bar:nth-child(1) { z-index: 8; }
+.aud-bar:nth-child(2) { z-index: 7; }
+.aud-bar:nth-child(3) { z-index: 6; }
+.aud-bar:nth-child(4) { z-index: 5; }
+.aud-bar:nth-child(5) { z-index: 4; }
+.aud-bar:nth-child(6) { z-index: 3; }
+.aud-bar:nth-child(7) { z-index: 2; }
+.aud-bar:nth-child(8) { z-index: 1; }
+.aud-bar__inner { display: flex; align-items: center; justify-content: space-between; gap: 60px; min-height: 170px; padding-block: 24px; }
+.aud-bar__title { flex: 1; min-width: 0; font-family: var(--font-serif); font-weight: 400; font-size: 37.4px; line-height: 41.089px; color: var(--c-text); }
+.aud-bar__text { flex: 0 0 607px; max-width: 607px; font-weight: 300; font-size: 29.9px; line-height: 33.619px; color: var(--c-text); }
+
+/* ---------- corporate responsive ---------- */
+@media (max-width: 1280px) {
+  .when__cols { gap: 40px; }
+  .audience-band__title { flex-basis: auto; max-width: none; font-size: 64px; line-height: 1.1; }
+  .audience-band__inner { padding-block: 120px; }
+}
+@media (max-width: 900px) {
+  .when__intro { font-size: 26px; line-height: 1.3; }
+  .when__cols { flex-direction: column; gap: 32px; }
+  .when__label { font-size: 26px; }
+  .when__list { font-size: 22px; line-height: 1.4; }
+  .when__illus { flex-basis: auto; max-width: 100%; width: 100%; }
+  .svc-stack { margin-top: 0; } /* avoid overlapping the form above on small screens */
+
+  .audience-band__inner { flex-direction: column; align-items: flex-start; gap: 24px; padding-block: 80px; }
+  .audience-band__title { font-size: 48px; }
+  .audience-band__text { max-width: none; }
+
+  .aud-bar__inner { flex-direction: column; align-items: flex-start; gap: 16px; min-height: 0; padding-block: 32px; }
+  .aud-bar__title, .aud-bar__text { flex-basis: auto; max-width: none; }
+}
+@media (max-width: 600px) {
+  .when__title { font-size: 28px; line-height: 1.15; }
+  .when__intro { font-size: 22px; }
+  .audience-band__title { font-size: 34px; }
+  .audience-band__text, .aud-bar__text { font-size: 20px; }
+  .aud-bar__title { font-size: 28px; }
+}
+
+/* =========================================================
+   ======  INTERNATIONAL STRUCTURING PAGE  ================
+   Reuses the corporate-page components; new pieces below.
+   ========================================================= */
+.page-intl .fixed-bg { background-image: url("../img/bg/Image-hero-legal-intl.jpg"); }
+.page-tcu  .fixed-bg { background-image: url("../img/bg/Image-hero-tcukik.jpg"); }
+.page-invest .fixed-bg { background-image: url("../img/bg/Image-hero-invest.jpg"); }
+
+/* investment disclaimer footnote (above the CTA) */
+.intro__note { margin-top: 40px; font-weight: 300; font-size: 26.1px; line-height: 29.883px; letter-spacing: -0.9338px; color: var(--c-green); }
+@media (max-width: 600px) { .intro__note { font-size: 18px; } }
+
+/* 3-column benefit grid (5 cards), narrower & centred */
+.benefit-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1229px; margin-inline: auto; }
+
+/* "Кому потрібне…" intro sits over the parallax image (no separate band image).
+   Heading/text are light for legibility over the darkened mountain photo. */
+.aud-intro { position: relative; }
+.aud-intro::before { content: ""; position: absolute; inset: 0; background: rgba(21, 24, 28, 0.45); z-index: 0; pointer-events: none; }
+.aud-intro__inner { position: relative; z-index: 1; display: flex; align-items: center; gap: 60px; padding-block: 150px; }
+.aud-intro__title { flex: 0 0 758px; max-width: 758px; font-weight: 300; font-size: 89.6px; line-height: 93.385px; text-transform: uppercase; color: var(--c-light); }
+.aud-intro__text { flex: 1; min-width: 0; max-width: 648px; font-weight: 300; font-size: 29.9px; line-height: 33.619px; color: var(--c-white); }
+.aud-intro__text .w-ss-semibold { font-weight: 600; }
+
+/* dark service panel: "У межах послуги" sub-list */
+.svc-block__sublabel { margin-top: 40px; font-weight: 300; font-size: 33.6px; line-height: 41.089px; letter-spacing: -0.9338px; color: var(--c-light); }
+.svc-block__sublist { margin-top: 16px; display: flex; flex-direction: column; gap: 14px; font-weight: 300; font-size: 33.6px; line-height: 41.089px; letter-spacing: -0.9338px; color: var(--c-light); }
+.svc-block__sublist li { list-style: disc; margin-left: 26px; }
+
+@media (max-width: 1280px) {
+  .aud-intro__title { flex-basis: auto; max-width: none; font-size: 64px; line-height: 1.1; }
+  .aud-intro__inner { padding-block: 110px; }
+}
+@media (max-width: 900px) {
+  .benefit-grid--3 { grid-template-columns: 1fr; } /* tablet → single column (overrides the --3 modifier) */
+  .aud-intro__inner { flex-direction: column; align-items: flex-start; gap: 24px; padding-block: 80px; }
+  .aud-intro__title { font-size: 48px; }
+  .aud-intro__text { max-width: none; }
+  .svc-block__sublabel, .svc-block__sublist { font-size: 26px; line-height: 1.3; }
+}
+@media (max-width: 600px) {
+  .aud-intro__title { font-size: 34px; }
+  .aud-intro__text { font-size: 20px; }
+  .svc-block__sublabel, .svc-block__sublist { font-size: 20px; }
+}
+
+

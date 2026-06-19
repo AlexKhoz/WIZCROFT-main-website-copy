@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WIZCROFT — Фінансово-правовий супровід бізнесу</title>
   <meta name="description" content="WIZCROFT — інтелектуальний партнер у фінансово-юридичних питаннях: податки, інвестиції, міжнародне структурування та захист бізнесу.">
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -40,14 +41,14 @@
                 <img src="img/icons/chevron.svg" alt="" width="14" height="7">
               </span>
               <!-- Services dropdown (opens on click of "Сервіси") -->
-              <ul class="services-menu" data-field-list="services_menu">
-                <li>Юридична практика</li>
-                <li>Корпоративні фінанси</li>
-                <li>Міжнародне структурування бізнесу</li>
-                <li>Трансфертне ціноутворення та КІК</li>
-                <li>Інвестиційні послуги</li>
-                <li>Податкове консультування</li>
-                <li>Комплексний захист бізнесу у кримінальному провадженні</li>
+              <ul class="services-menu">
+                <li><a href="legal.html">Юридична практика</a></li>
+                <li><a href="corporate.html">Корпоративні фінанси</a></li>
+                <li><a href="international.html">Міжнародне структурування бізнесу</a></li>
+                <li><a href="tcu-kik.html">Трансфертне ціноутворення та КІК</a></li>
+                <li><a href="investment.html">Інвестиційні послуги</a></li>
+                <li><a href="index.html">Податкове консультування</a></li>
+                <li><a href="index.html">Комплексний захист бізнесу у кримінальному провадженні</a></li>
               </ul>
             </span>
 
@@ -254,7 +255,7 @@
             <p class="contact__nda" data-field-html="form.nda_html">Усе, що обговорюється під час зустрічі-знайомства, залишається конфіденційним. За потреби ми <span class="w-ss-semibold">підписуємо NDA, </span> щоб гарантувати повну приватність і захист вашої інформації.</p>
 
             <!-- Web3Forms contact form -->
-            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <form class="contact-form js-w3form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
               <!-- TODO: replace YOUR_ACCESS_KEY_HERE with the client's real Web3Forms access key -->
               <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
               <input type="hidden" name="subject" value="Нова заявка з сайту WIZCROFT">
@@ -301,11 +302,11 @@
         <div class="footer__cols">
           <nav class="footer__services" aria-label="Сервіси">
             <h3 class="footer__col-title" data-field="footer.services_title">Сервіси</h3>
-            <a href="#">Юридична практика</a>
-            <a href="#">Корпоративні фінанси</a>
-            <a href="#">Міжнародне структурування бізнесу</a>
-            <a href="#">Трансфертне ціноутворення та КІК</a>
-            <a href="#">Інвестиційні послуги</a>
+            <a href="legal.html">Юридична практика</a>
+            <a href="corporate.html">Корпоративні фінанси</a>
+            <a href="international.html">Міжнародне структурування бізнесу</a>
+            <a href="tcu-kik.html">Трансфертне ціноутворення та КІК</a>
+            <a href="investment.html">Інвестиційні послуги</a>
             <a href="#">Податкове консультування</a>
             <a href="#" class="footer__services-multiline">Комплексний захист бізнесу у<br>кримінальному провадженні</a>
           </nav>
