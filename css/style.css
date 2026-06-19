@@ -366,7 +366,9 @@ ul { list-style: none; }
 /* =========================================================
    FOOTER
    ========================================================= */
-.footer { position: relative; color: var(--c-light); overflow: hidden; }
+/* pulled up under the partners block (whose rounded bottom corners then
+   reveal this dark footer, removing the hard edge) */
+.footer { position: relative; z-index: 0; margin-top: -60px; padding-top: 60px; color: var(--c-light); overflow: hidden; }
 .footer__overlay { position: absolute; inset: 0; background: var(--overlay); z-index: 0; pointer-events: none; }
 .footer__inner { position: relative; z-index: 1; padding-block: 160px 60px; }
 
@@ -742,6 +744,8 @@ ul { list-style: none; }
 .page-intl .fixed-bg { background-image: url("../img/bg/Image-hero-legal-intl.jpg"); }
 .page-tcu  .fixed-bg { background-image: url("../img/bg/Image-hero-tcukik.jpg"); }
 .page-invest .fixed-bg { background-image: url("../img/bg/Image-hero-invest.jpg"); }
+.page-tax  .fixed-bg { background-image: url("../img/bg/Image-hero-tax.jpg"); }
+.page-crim .fixed-bg { background-image: url("../img/bg/Image-hero-crim.webp"); }
 
 /* investment disclaimer footnote (above the CTA) */
 .intro__note { margin-top: 40px; font-weight: 300; font-size: 26.1px; line-height: 29.883px; letter-spacing: -0.9338px; color: var(--c-green); }
