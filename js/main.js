@@ -6,8 +6,8 @@
    3) Scroll-to-top ("Наверх").
 
    NOTE on the fixed-background ("parallax") effect: it is implemented
-   purely in CSS (.hero__bg-img / .footer__bg-img use position:fixed,
-   clipped by the section's overflow:hidden). No JS is required for it.
+   purely in CSS — a single viewport-fixed `.fixed-bg` element sits behind
+   the page; the transparent hero & footer reveal it. No JS is required.
    ============================================================ */
 
 (function () {
